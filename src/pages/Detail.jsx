@@ -11,7 +11,7 @@ function Detail() {
   const { id } = useParams();
 
   const detailData = {
-    '1': {
+    'yyh': {
       title: '杭州亚运会',
       date: '2023-10-02',
       content: '那是我们第一次一起看这么盛大的比赛，三张照片都是最美的回忆。',
