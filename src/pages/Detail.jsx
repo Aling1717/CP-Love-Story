@@ -19,7 +19,7 @@ function Detail() {
     '2': {
       title: '第一次上海迪士尼',
       date: '2024-01-15',
-      content: '在童话世界里的一天。',
+      content: '嘿嘿宝贝我还没做这个嘻嘻嘻嘻嘻',
       images: [] 
     }
   };
@@ -30,7 +30,8 @@ function Detail() {
   return (
     <div className="container">
       <div className="detail-card">
-        <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px' }}>
+        {/* --- 顶部的返回按钮 --- */}
+        <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', display: 'inline-block' }}>
           ← 返回时间轴
         </Link>
         
@@ -40,16 +41,16 @@ function Detail() {
         {/* 1. 先显示文字内容 */}
         <p style={{ 
           marginTop: '15px', 
-          marginBottom: '20px', /* 与下方图片拉开距离 */
+          marginBottom: '20px', 
           lineHeight: '1.6', 
           color: '#555', 
           whiteSpace: 'pre-wrap',
-          textAlign: 'left' /* 文字左对齐看起更舒服 */
+          textAlign: 'left' 
         }}>
           {item.content}
         </p>
 
-        {/* 2. 再显示图片列表 */}
+        {/* 2. 中间显示图片列表 */}
         <div style={{ marginTop: '10px' }}>
           {item.images && item.images.map((pic, index) => (
             <img 
@@ -67,7 +68,17 @@ function Detail() {
             />
           ))}
         </div>
+
+        {/* --- 底部的返回按钮 --- */}
+        <div style={{ textAlign: 'center', marginTop: '20px', paddingTop: '10px', borderTop: '1px solid #eee' }}>
+          <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', fontWeight: 'bold' }}>
+            ← 返回时间轴步足迹
+          </Link>
+        </div>
       </div>
+      
+      {/* 底部额外留白，防止手机底栏遮挡 */}
+      <div style={{ height: '40px' }}></div>
     </div>
   );
 }
