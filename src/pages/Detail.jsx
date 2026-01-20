@@ -1,12 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
 
-// 第一步：引入 (名字必须和 assets 里的 yyh1.jpg 等完全对应)
+// 引入 assets 文件夹中的四张亚运会照片
 import yyh1 from '../assets/yyh1.jpg';
 import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
 import yyh4 from '../assets/yyh4.jpg';
-// 注意：如果你还没有上传 disney.jpg，请先注释掉下面这一行，或者确保文件名正确
-//import disneyPic from '../assets/disney.jpg'; 
+// 迪士尼照片暂时不引入
+// import disneyPic from '../assets/disney.jpg'; 
 
 function Detail() {
   const { id } = useParams();
@@ -27,6 +27,8 @@ function Detail() {
   };
 
   const item = detailData[id];
+
+  // 安全检查：如果 id 不匹配则返回提示
   if (!item) return <div className="container">找不到这段回忆...</div>;
 
   return (
@@ -37,18 +39,28 @@ function Detail() {
         <p style={{ color: '#999', fontSize: '14px' }}>{item.date}</p>
         
         <div style={{ marginTop: '20px' }}>
-          {/* 这里是自动循环显示数组里的所有图片 */}
+          {/* 自动循环显示所有照片 */}
           {item.images.map((pic, index) => (
             <img 
               key={index}
               src={pic} 
-              alt="memory" 
-              style={{ width: '100%', borderRadius: '15px', marginBottom: '15px', boxShadow: '0 4px 10px rgba(0,0,0,0.1)' }} 
+              alt={`memory-${index}`} 
+              loading="lazy" /* 优化加载，防止卡顿 */
+              style={{ 
+                width: '100%', 
+                height: 'auto',      /* 👈 强制高度自适应，防止图片被切断 */
+                display: 'block',    /* 👈 消除图片底部间隙 */
+                borderRadius: '15px', 
+                marginBottom: '15px', 
+                boxShadow: '0 4px 10px rgba(0,0,0,0.1)' 
+              }} 
             />
           ))}
         </div>
 
-        <p style={{ marginTop: '10px', lineHeight: '1.8' }}>{item.content}</p>
+        <p style={{ marginTop: '10px', lineHeight: '1.8', color: '#555' }}>
+          {item.content}
+        </p>
       </div>
     </div>
   );
