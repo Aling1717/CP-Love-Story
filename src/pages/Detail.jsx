@@ -16,7 +16,7 @@ function Detail() {
       title: '杭州亚运会',
       date: '2023-10-02',
       content: '第一次和小猪宝贝出去玩 去看了亚运会 晚上还在市内city walk ',
-      images: [yyh2, yyh3, yyh1] 
+      images: [yyh1, yyh2, yyh3, yyh4] 
     },
     '2': {
       title: '第一次上海迪士尼',
