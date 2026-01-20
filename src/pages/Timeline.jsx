@@ -1,12 +1,31 @@
 import { Link } from 'react-router-dom';
 
 function Timeline() {
-  // 暂时清空所有错误时间，等待填入真正的回忆
-  const memories = [];
+  /**
+   * 【添加时间的方法】
+   * 以后每增加一个日期，就在下面的 [ ] 中间增加一个 { ... } 块。
+   * 注意：每个块之间要用逗号 (,) 隔开。
+   */
+  const memories = [
+    { 
+      id: '1',               // 唯一标识（用于跳转详情页）
+      date: '2023-10-02',        // 显示的日期
+      title: '杭州亚运会',   // 这一天的标题
+      //icon: '❤️'                 // 显示的小图标
+    },
+    // 以后想加新的，就从这里开始粘贴...
+    { 
+      id: '2',               // 唯一标识（用于跳转详情页）
+      date: '2023-1-15',        // 显示的日期
+      title: '上海的第一次迪士尼',   // 这一天的标题
+      //icon: '❤️'                 // 显示的小图标
+    },
+  ];
 
   return (
     <div className="container">
-      <h2>我们的足迹时间轴</h2>
+      <h2 style={{ textAlign: 'center', margin: '20px 0' }}>我们的足迹时间轴</h2>
+      
       <div className="timeline-container">
         {memories.length > 0 ? (
           memories.map(m => (
@@ -26,7 +45,10 @@ function Timeline() {
           </div>
         )}
       </div>
-      <Link to="/"><p className="back-link">返回首页</p></Link>
+
+      <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <Link to="/" className="back-link">← 返回首页</Link>
+      </div>
     </div>
   );
 }
