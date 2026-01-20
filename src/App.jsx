@@ -10,11 +10,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/timeline" element={<Timeline />} />
-        <Route path="/detail/:id" element={<Route element={<Detail />} />} />
-        {/* 上面这一行如果报错，请改成下面这样更简洁的： */}
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </Router>
   );
 }
+
 export default App;

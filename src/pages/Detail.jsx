@@ -6,8 +6,7 @@ function Detail() {
 
   // 根据点击的 ID 显示不同的内容
   const content = {
-    shanghai: { title: "上海之行", text: "在外滩吹着晚风，那一刻觉得世界很安静。" },
-    wuzhen: { title: "乌镇记忆", text: "蓝印花布很漂亮，你笑得比风景更美。" }
+    '1': { title: "杭州", text: "" },
   };
 
   const item = content[id] || { title: "未知回忆", text: "期待我们去这里！" };
