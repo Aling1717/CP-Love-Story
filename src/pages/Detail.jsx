@@ -72,7 +72,7 @@ function Detail() {
         {/* --- 底部的返回按钮 --- */}
         <div style={{ textAlign: 'center', marginTop: '20px', paddingTop: '10px', borderTop: '1px solid #eee' }}>
           <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', fontWeight: 'bold' }}>
-            ← 返回时间轴步足迹
+            ← 返回时间轴
           </Link>
         </div>
       </div>
