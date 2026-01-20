@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 function Timeline() {
-  // 这里已经填入了你的两段回忆
+
   const memories = [
     { 
       id: '1', 
@@ -11,9 +11,9 @@ function Timeline() {
     },
     {
         id:'2',
-        data:'2024-1-15',
+        date:'2024-1-15',
         title:'第一次上海迪士尼',
-        icon:'🏟️'
+        icon:'🎡'
     },
 
   ];

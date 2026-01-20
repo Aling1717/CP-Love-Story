@@ -1,128 +1,97 @@
-/* 全局基础设置 */
+/* 基础重置，确保没有边距干扰 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #4a5568;
-}
-
-/* 核心容器：这里定义了消失的背景颜色 */
+/* 核心容器：解决偏左问题的关键 */
 .container {
   min-height: 100vh;
-  /* 柔和的浪漫粉色渐变 */
-  background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%);
+  width: 100%;           /* 强制宽度占满屏幕 */
+  background-color: #fff5f7; /* 恢复最初的柔和粉色 */
   padding: 40px 20px;
+  display: flex;         /* 开启弹性布局 */
+  flex-direction: column;/* 内容垂直排列 */
+  align-items: center;    /* 【关键】让所有内容水平居中 */
+  justify-content: flex-start;
+}
+
+/* 时间轴容器 */
+.timeline-container {
+  width: 100%;
+  max-width: 500px;      /* 限制最大宽度，防止在大屏幕上太散 */
   display: flex;
   flex-direction: column;
+  align-items: center;   /* 让内部卡片居中 */
+  margin-top: 20px;
+}
+
+/* 时间轴卡片：让它看起来更精致 */
+.timeline-card {
+  background: white;
+  width: 100%;           /* 占满容器宽度 */
+  max-width: 400px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  text-decoration: none; /* 去除链接下划线 */
+  color: #333;           /* 文字颜色 */
+  display: flex;
   align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 淡淡的阴影 */
+  transition: transform 0.2s;
+}
+
+.timeline-card:active {
+  transform: scale(0.98); /* 点击时的反馈效果 */
+}
+
+/* 图标样式 */
+.timeline-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+/* 日期与标题 */
+.timeline-info {
+  flex-grow: 1;
+}
+
+.timeline-date {
+  font-size: 12px;
+  color: #999;
+  display: block;
+}
+
+.timeline-info h3 {
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+/* 箭头 */
+.arrow {
+  color: #ccc;
+  font-weight: bold;
 }
 
 /* 首页爱心动画 */
 .heart {
-  animation: heartbeat 1.5s ease-in-out infinite;
+  font-size: 60px;
   margin-bottom: 20px;
+  animation: pulse 1.5s infinite;
 }
 
-@keyframes heartbeat {
+@keyframes pulse {
   0% { transform: scale(1); }
-  14% { transform: scale(1.15); }
-  28% { transform: scale(1); }
-  42% { transform: scale(1.15); }
-  70% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-/* 标题与文字样式 */
-h1 {
-  font-size: 2rem;
-  color: #e53e3e;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #718096;
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
-
-/* 按钮样式 */
-.main-btn {
-  background-color: #f687b3;
-  color: white;
-  border: none;
-  padding: 12px 30px;
-  border-radius: 25px;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.main-btn:active {
-  transform: scale(0.95);
-}
-
-/* 时间轴卡片样式 */
-.timeline-container {
-  width: 100%;
-  max-width: 500px;
-}
-
-.timeline-card {
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
+/* 返回链接样式 */
+.back-link {
+  margin-top: 30px;
+  color: #ff6b81;
   text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s;
-}
-
-.timeline-card:hover {
-  transform: translateY(-3px);
-}
-
-.timeline-icon {
-  margin-right: 15px;
-}
-
-.timeline-date {
-  font-size: 0.85rem;
-  color: #a0aec0;
-}
-
-.timeline-info h3 {
-  font-size: 1.1rem;
-  color: #4a5568;
-}
-
-.arrow {
-  margin-left: auto;
-  color: #cbd5e0;
-}
-
-/* 详情页样式 */
-.detail-card {
-  background: white;
-  border-radius: 20px;
-  padding: 25px;
-  width: 100%;
-  max-width: 500px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.back-btn {
-  align-self: flex-start;
-  background: none;
-  border: none;
-  color: #f687b3;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  cursor: pointer;
+  font-weight: bold;
 }
