@@ -6,6 +6,11 @@ import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
 import yyh4 from '../assets/yyh4.jpg';
 
+import dsn1 from '../assets/dsn1.jpg';
+import dsn2 from '../assets/dsn2.jpg';
+import dsn3 from '../assets/dsn3.jpg';
+import dsn4 from '../assets/dsn4.jpg';
+
 function Detail() {
   const { id } = useParams();
 
@@ -25,7 +30,12 @@ function Detail() {
       title: '第一次上海迪士尼',
       date: '2024-01-15',
       content: '我们第一次去迪士尼！',
-      imagesWithNote: [] 
+      imagesWithNote: [
+        { url: dsn1, note: '排队前的超大唐老鸭'},
+        { url: dsn2, note: '尼克狐尼克！'},
+        { url: dsn3, note: '小兔子朱迪！'},
+        { url: dsn4, note: '呜呜呜呜呜大猪猪吃完晚饭困困睡着了~'}
+      ] 
     }
   };
 
