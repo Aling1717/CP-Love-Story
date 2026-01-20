@@ -1,11 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
 
-// 引入四张亚运会照片
+// 亚运会照片
 import yyh1 from '../assets/yyh1.jpg';
 import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
 import yyh4 from '../assets/yyh4.jpg';
-
+// 第一次迪士尼照片
 import dsn1 from '../assets/dsn1.jpg';
 import dsn2 from '../assets/dsn2.jpg';
 import dsn3 from '../assets/dsn3.jpg';
@@ -37,6 +37,7 @@ function Detail() {
         { url: dsn4, note: '呜呜呜呜呜大猪猪吃完晚饭困困睡着了~'}
       ] 
     }
+    
   };
 
   const item = detailData[id];
