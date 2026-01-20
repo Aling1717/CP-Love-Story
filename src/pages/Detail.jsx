@@ -48,11 +48,13 @@ function Detail() {
               loading="lazy" /* 优化加载，防止卡顿 */
               style={{ 
                 width: '100%', 
+                minHeight: '200px',
                 height: 'auto',      /* 👈 强制高度自适应，防止图片被切断 */
                 display: 'block',    /* 👈 消除图片底部间隙 */
                 borderRadius: '15px', 
                 marginBottom: '15px', 
-                boxShadow: '0 4px 10px rgba(0,0,0,0.1)' 
+                boxShadow: '0 4px 10px rgba(0,0,0,0.1)',
+                backgroundColor: '#f0f0f0'
               }} 
             />
           ))}
