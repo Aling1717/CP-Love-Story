@@ -15,10 +15,10 @@ function Detail() {
       date: '2023-10-02',
       content: '第一次和小猪宝贝出去玩 去看了亚运会 晚上还在市内city walk ',
       imagesWithNote: [
-        { url: yyh1, note: '' },
-        { url: yyh2, note: '' },
+        { url: yyh1, note: '在场馆看比赛！有一个跳高的特别厉害！' },
+        { url: yyh2, note: '我们刮刮乐刮到了180！' },
         { url: yyh3, note: '' },
-        { url: yyh4, note: '' }
+        { url: yyh4, note: 'city walk~' }
       ]
     },
     '2': {
@@ -26,10 +26,10 @@ function Detail() {
       date: '2024-01-15',
       content: '嘿嘿宝贝我还没做这个嘻嘻嘻嘻嘻',
        imagesWithNote: [
-        { url: yyh1, note: '在场馆看比赛！有一个跳高的特别厉害！' },
-        { url: yyh2, note: '我们刮刮乐刮到了180！' },
+        { url: yyh1, note: '' },
+        { url: yyh2, note: '' },
         { url: yyh3, note: '' },
-        { url: yyh4, note: 'city walk~' }
+        { url: yyh4, note: '' }
       ] 
     }
   };
