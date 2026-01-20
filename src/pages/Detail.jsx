@@ -35,9 +35,22 @@ function Detail() {
         </Link>
         
         <h2 style={{ marginTop: '15px', color: '#333' }}>{item.title}</h2>
-        <p style={{ color: '#999', fontSize: '13px' }}>{item.date}</p>
+        <p style={{ color: '#999', fontSize: '13px', marginBottom: '10px' }}>{item.date}</p>
         
-        <div style={{ marginTop: '20px' }}>
+        {/* 1. 先显示文字内容 */}
+        <p style={{ 
+          marginTop: '15px', 
+          marginBottom: '20px', /* 与下方图片拉开距离 */
+          lineHeight: '1.6', 
+          color: '#555', 
+          whiteSpace: 'pre-wrap',
+          textAlign: 'left' /* 文字左对齐看起更舒服 */
+        }}>
+          {item.content}
+        </p>
+
+        {/* 2. 再显示图片列表 */}
+        <div style={{ marginTop: '10px' }}>
           {item.images && item.images.map((pic, index) => (
             <img 
               key={index}
@@ -45,18 +58,15 @@ function Detail() {
               alt="memory" 
               style={{ 
                 width: '100%', 
-                height: 'auto',     /* 👈 确保图片等比例显示 */
+                height: 'auto', 
                 display: 'block', 
                 borderRadius: '12px', 
-                marginBottom: '15px' 
+                marginBottom: '15px',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
               }} 
             />
           ))}
         </div>
-
-        <p style={{ marginTop: '15px', lineHeight: '1.6', color: '#555', whiteSpace: 'pre-wrap' }}>
-          {item.content}
-        </p>
       </div>
     </div>
   );
