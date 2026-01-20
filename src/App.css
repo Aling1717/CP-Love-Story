@@ -1,97 +1,49 @@
-/* 基础重置，确保没有边距干扰 */
-* {
+/* 彻底重置浏览器默认边距 */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* 核心容器：解决偏左问题的关键 */
-.container {
-  min-height: 100vh;
-  width: 100%;           /* 强制宽度占满屏幕 */
-  background-color: #fff5f7; /* 恢复最初的柔和粉色 */
-  padding: 40px 20px;
-  display: flex;         /* 开启弹性布局 */
-  flex-direction: column;/* 内容垂直排列 */
-  align-items: center;    /* 【关键】让所有内容水平居中 */
-  justify-content: flex-start;
-}
-
-/* 时间轴容器 */
-.timeline-container {
   width: 100%;
-  max-width: 500px;      /* 限制最大宽度，防止在大屏幕上太散 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;   /* 让内部卡片居中 */
-  margin-top: 20px;
+  height: 100%;
+  overflow-x: hidden; /* 防止左右晃动 */
 }
 
-/* 时间轴卡片：让它看起来更精致 */
+/* 强制全屏居中容器 */
+.container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;    /* 水平居中 */
+  justify-content: flex-start !important;
+  min-height: 100vh !important;
+  width: 100vw !important;           /* 强制占用 100% 屏幕宽度 */
+  background-color: #fff5f7 !important; /* 你的粉色背景 */
+  padding: 40px 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 时间轴容器也要水平居中 */
+.timeline-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 500px !important;
+}
+
+/* 卡片样式，确保它在中间 */
 .timeline-card {
-  background: white;
-  width: 100%;           /* 占满容器宽度 */
-  max-width: 400px;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 15px;
-  text-decoration: none; /* 去除链接下划线 */
-  color: #333;           /* 文字颜色 */
-  display: flex;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 淡淡的阴影 */
-  transition: transform 0.2s;
+  background: white !important;
+  width: 90% !important;            /* 占据屏幕宽度的 90% */
+  max-width: 400px !important;
+  margin: 10px 0 !important;
+  padding: 20px !important;
+  border-radius: 15px !important;
+  display: flex !important;
+  align-items: center !important;
+  text-decoration: none !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
 }
 
-.timeline-card:active {
-  transform: scale(0.98); /* 点击时的反馈效果 */
-}
-
-/* 图标样式 */
-.timeline-icon {
-  font-size: 24px;
-  margin-right: 15px;
-}
-
-/* 日期与标题 */
 .timeline-info {
-  flex-grow: 1;
-}
-
-.timeline-date {
-  font-size: 12px;
-  color: #999;
-  display: block;
-}
-
-.timeline-info h3 {
-  font-size: 18px;
-  margin-top: 5px;
-}
-
-/* 箭头 */
-.arrow {
-  color: #ccc;
-  font-weight: bold;
-}
-
-/* 首页爱心动画 */
-.heart {
-  font-size: 60px;
-  margin-bottom: 20px;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* 返回链接样式 */
-.back-link {
-  margin-top: 30px;
-  color: #ff6b81;
-  text-decoration: none;
-  font-weight: bold;
+  flex: 1;
+  margin-left: 15px;
 }
