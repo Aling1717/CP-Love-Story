@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import yyh1 from '../assets/yyh1.jpg';
 import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
+import yyh4 from '../assets/yyh3.jpg';
 // 注意：如果你还没有上传 disney.jpg，请先注释掉下面这一行，或者确保文件名正确
 //import disneyPic from '../assets/disney.jpg'; 
 
@@ -14,8 +15,8 @@ function Detail() {
     'yyh': {
       title: '杭州亚运会',
       date: '2023-10-02',
-      content: '那是我们第一次一起看这么盛大的比赛，三张照片都是最美的回忆。',
-      images: [yyh1, yyh2, yyh3] 
+      content: '第一次和小猪宝贝出去玩 去看了亚运会 晚上还在市内city walk ',
+      images: [yyh2, yyh3, yyh1] 
     },
     '2': {
       title: '第一次上海迪士尼',
