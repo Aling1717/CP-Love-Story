@@ -15,13 +15,13 @@ function Detail() {
       title: '杭州亚运会',
       date: '2023-10-02',
       content: '那是我们第一次一起看这么盛大的比赛，三张照片都是最美的回忆。',
-      images: [yyh1, yyh2, yyh3] // 👈 使用上面引入的变量名
+      images: [yyh1, yyh2, yyh3] 
     },
     '2': {
       title: '第一次上海迪士尼',
       date: '2024-01-15',
       content: '在童话世界里的一天。',
-      images: [disneyPic] 
+      images: [] 
     }
   };
 
