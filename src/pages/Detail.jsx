@@ -1,17 +1,18 @@
 import { useParams, Link } from 'react-router-dom';
 
-// 亚运会照片
+// 1. 严格检查 assets 文件夹中的文件名和后缀（必须与本地完全一致）
 import yyh1 from '../assets/yyh1.jpg';
 import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
 import yyh4 from '../assets/yyh4.jpg';
-// 第一次迪士尼照片
+
 import dsn1 from '../assets/dsn1.jpg';
 import dsn2 from '../assets/dsn2.jpg';
 import dsn3 from '../assets/dsn3.jpg';
 import dsn4 from '../assets/dsn4.jpg';
 
 function Detail() {
+  // useParams 必须在组件函数的最顶部调用
   const { id } = useParams();
 
   const detailData = {
@@ -37,15 +38,26 @@ function Detail() {
         { url: dsn4, note: '呜呜呜呜呜大猪猪吃完晚饭困困睡着了~'}
       ] 
     }
-    
   };
 
   const item = detailData[id];
-  if (!item) return <div className="container">找不到这段回忆...</div>;
+
+  // 错误处理：如果 ID 不匹配则显示提示
+  if (!item) {
+    return (
+      <div className="container">
+        <div className="detail-card" style={{ textAlign: 'center' }}>
+          <h3>找不到这段回忆...</h3>
+          <Link to="/timeline" style={{ color: '#ff6b81' }}>返回时间轴</Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container">
       <div className="detail-card">
+        {/* 顶部返回链接 */}
         <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', display: 'inline-block' }}>
           ← 返回时间轴
         </Link>
@@ -64,13 +76,13 @@ function Detail() {
           {item.content}
         </p>
 
-        {/* 2. 修正后的图片列表：使用 imagesWithNote */}
+        {/* 图片与批注渲染列表 */}
         <div style={{ marginTop: '10px' }}>
           {item.imagesWithNote && item.imagesWithNote.map((imgObj, index) => (
             <div key={index} style={{ marginBottom: '25px', textAlign: 'center' }}>
               <img 
                 src={imgObj.url} 
-                alt="memory" 
+                alt={`memory-${index}`} 
                 style={{ 
                   width: '100%', 
                   height: 'auto', 
@@ -79,7 +91,6 @@ function Detail() {
                   boxShadow: '0 4px 12px rgba(0,0,0,0.08)'
                 }} 
               />
-              {/* 如果 note 有内容才显示批注文字 */}
               {imgObj.note && (
                 <p style={{ 
                   marginTop: '10px', 
@@ -95,6 +106,7 @@ function Detail() {
           ))}
         </div>
 
+        {/* 底部返回链接 */}
         <div style={{ textAlign: 'center', marginTop: '20px', paddingTop: '10px', borderTop: '1px solid #eee' }}>
           <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', fontWeight: 'bold' }}>
             ← 返回时间轴
@@ -102,6 +114,7 @@ function Detail() {
         </div>
       </div>
       
+      {/* 底部留白，防止内容被遮挡 */}
       <div style={{ height: '40px' }}></div>
     </div>
   );

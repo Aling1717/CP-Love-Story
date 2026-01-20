@@ -1,52 +1,18 @@
-/* src/App.css */
-
-/* 1. 强制所有基础层级都水平居中 */
-html, body, #root {
+body {
   margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  justify-content: center; /* 水平居中 */
-  background-color: #fff5f7;
+  background-color: #fff5f6; /* 全局淡粉色背景 */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 2. 核心容器：必须撑满宽度且内容居中 */
 .container {
-  width: 100vw !important;
-  min-height: 100vh !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;    /* 👈 核心：让内部所有元素水平居中 */
-  justify-content: flex-start !important;
-  padding: 40px 0 !important;
-  box-sizing: border-box !important;
-  text-align: center !important;    /* 👈 核心：让文字也居中 */
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 水平居中 */
 }
 
-/* 3. 卡片容器：确保它在中间且宽度合适 */
-.detail-card, .timeline-container, .home-content {
-  width: 90% !important;
-  max-width: 500px !important;
-  margin-left: auto !important;     /* 👈 左右自动边距双重保险 */
-  margin-right: auto !important;
-  background: white !important;
-  padding: 25px !important;
-  border-radius: 20px !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
-}
-
-/* 4. 图片强制居中 */
-img {
-  width: 100% !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto 15px auto !important; /* 👈 图片上下留白且水平居中 */
-  border-radius: 12px !important;
-}
-
-/* 5. 按钮样式补充，确保它是块级居中 */
-.back-btn, .back-link, .开启回忆之旅的按钮类名 {
-  display: inline-block !important;
-  margin: 10px auto !important;
+.home-content {
+  text-align: center;
+  width: 100%;
 }
