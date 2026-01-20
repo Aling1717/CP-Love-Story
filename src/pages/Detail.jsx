@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import yyh1 from '../assets/yyh1.jpg';
 import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
-import yyh4 from '../assets/yyh3.jpg';
+import yyh4 from '../assets/yyh4.jpg';
 // 注意：如果你还没有上传 disney.jpg，请先注释掉下面这一行，或者确保文件名正确
 //import disneyPic from '../assets/disney.jpg'; 
 
