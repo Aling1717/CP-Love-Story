@@ -44,7 +44,7 @@ function Detail() {
       ] 
     },
     
-  'sh24_2': {
+    'sh24_2': {
       title: '和朋友上海+杭州',
       date: '2024-02',
       content: '逛逛逛！',
@@ -55,22 +55,15 @@ function Detail() {
         { url: sh24_2_4, note: '小猪和网红合照~'}
       ] 
     }
-
-
-
-
-
-
   };
-
 
   const item = detailData[id];
 
   // 错误处理：如果 ID 不匹配则显示提示
   if (!item) {
     return (
-      <div className="container">
-        <div className="detail-card" style={{ textAlign: 'center' }}>
+      <div className="container" style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
+        <div className="detail-card" style={{ textAlign: 'center', backgroundColor: '#fff', padding: '20px', borderRadius: '20px', width: '100%', maxWidth: '500px' }}>
           <h3>找不到这段回忆...</h3>
           <Link to="/timeline" style={{ color: '#ff6b81' }}>返回时间轴</Link>
         </div>
@@ -79,8 +72,25 @@ function Detail() {
   }
 
   return (
-    <div className="container">
-      <div className="detail-card">
+    <div className="container" style={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      alignItems: 'center', 
+      width: '100vw',
+      minHeight: '100vh',
+      backgroundColor: '#fff5f6', // 统一粉色背景
+      padding: '20px 0'
+    }}>
+      <div className="detail-card" style={{ 
+        width: '90%',               // 移动端宽度
+        maxWidth: '500px',          // 桌面端最大宽度
+        minWidth: '320px',          // 核心修复：即使内容少，也强制保持最小宽度
+        backgroundColor: '#fff', 
+        padding: '20px', 
+        borderRadius: '20px', 
+        boxShadow: '0 10px 30px rgba(0,0,0,0.05)',
+        boxSizing: 'border-box'
+      }}>
         {/* 顶部返回链接 */}
         <Link to="/timeline" style={{ textDecoration: 'none', color: '#ff6b81', fontSize: '14px', display: 'inline-block' }}>
           ← 返回时间轴
@@ -108,7 +118,7 @@ function Detail() {
                 src={imgObj.url} 
                 alt={`memory-${index}`} 
                 style={{ 
-                  width: '100%', 
+                  width: '100%',        // 图片撑满卡片
                   height: 'auto', 
                   display: 'block', 
                   borderRadius: '12px', 
@@ -138,7 +148,7 @@ function Detail() {
         </div>
       </div>
       
-      {/* 底部留白，防止内容被遮挡 */}
+      {/* 底部留白 */}
       <div style={{ height: '40px' }}></div>
     </div>
   );
