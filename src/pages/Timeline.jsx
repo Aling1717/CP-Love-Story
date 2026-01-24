@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 function Timeline() {
-
   const memories = [
     { 
       id: 'yyh', 
@@ -10,31 +9,29 @@ function Timeline() {
       icon: '🏟️' 
     },
     {
-        id:'disney',
-        date:'2024-1-15',
-        title:'第一次上海迪士尼',
-        icon:'🎡'
+      id: 'disney',
+      date: '2024-1-15',
+      title: '第一次上海迪士尼',
+      icon: '🎡'
     },
     {
-      id:'sh24_2',
-      date:'2024-2',
-      title:'和朋友上海+杭州',
-      icon:'🌁'
+      id: 'sh24_2',
+      date: '2024-2',
+      title: '和朋友上海+杭州',
+      icon: '🌁'
     },
     {
-      id:'24-5-1',
-      date:'2024-5-1',
-      title:'北京',
-      icon:'🦆'
+      id: '24-5-1',
+      date: '2024-5-1',
+      title: '北京',
+      icon: '🦆'
     },
     {
-      id:'24-5-3',
-      date:'2024-5-3',
-      title:'天津',
-      icon:'🍔'
+      id: '24-5-3',
+      date: '2024-5-3',
+      title: '天津',
+      icon: '🍔'
     }
-
-
   ];
 
   return (
@@ -42,15 +39,21 @@ function Timeline() {
       <h2 style={{ textAlign: 'center', margin: '20px 0' }}>我们的足迹时间轴</h2>
       
       <div className="timeline-container">
-        {/* 这里会直接循环显示你的回忆卡片 */}
         {memories.map(m => (
-          <Link to={`/detail/${m.id}`} key={m.id} className="timeline-card">
-            <span className="timeline-icon" style={{ fontSize: '24px' }}>{m.icon}</span>
-            <div className="timeline-info">
-              <span className="timeline-date">{m.date}</span>
-              <h3 style={{ margin: '5px 0' }}>{m.title}</h3>
+          <Link to={`/detail/${m.id}`} key={m.id} className="timeline-card" style={{ flexDirection: 'column', alignItems: 'flex-start', padding: '15px 20px' }}>
+            
+            {/* 第一行：箭头 + 时间 */}
+            <div style={{ marginBottom: '8px', color: '#ff6b81', fontSize: '13px', display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <span>❯</span> 
+              <span className="timeline-date" style={{ color: '#999' }}>{m.date}</span>
             </div>
-            <span className="arrow">❯</span>
+            
+            {/* 第二行：图标 + 标题 */}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <span className="timeline-icon" style={{ fontSize: '24px', marginRight: '10px' }}>{m.icon}</span>
+              <h3 style={{ margin: '0' }}>{m.title}</h3>
+            </div>
+
           </Link>
         ))}
       </div>
