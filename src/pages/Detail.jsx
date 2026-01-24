@@ -45,7 +45,7 @@ function Detail() {
     },
     
   'sh24_2': {
-      title: '去了上海之后又去了杭州',
+      title: '和朋友上海+杭州',
       date: '2024-02',
       content: '逛逛逛！',
       imagesWithNote: [
