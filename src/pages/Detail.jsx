@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, data } from 'react-router-dom';
 
 // 1. 严格检查 assets 文件夹中的文件名和后缀（必须与本地完全一致）
 import yyh1 from '../assets/yyh1.jpg';
@@ -15,6 +15,23 @@ import sh24_2_1 from '../assets/sh24_2_1.jpg';
 import sh24_2_2 from '../assets/sh24_2_2.jpg';
 import sh24_2_3 from '../assets/sh24_2_3.jpg';
 import sh24_2_4 from '../assets/sh24_2_4.jpg';
+
+import bj1 from '../assets/bj1.jpg';
+import bj2 from '../assets/bj2.jpg';
+import bj3 from '../assets/bj3.jpg';
+import bj4 from '../assets/bj4.jpg';
+import bj5 from '../assets/bj5.jpg';
+import bj6 from '../assets/bj6.jpg';
+import bj7 from '../assets/bj7.jpg';
+
+import tj1 from '../assets/tj1.jpg';
+import tj2 from '../assets/tj2.jpg';
+import tj3 from '../assets/tj3.jpg';
+import tj4 from '../assets/tj4.jpg';
+import tj5 from '../assets/tj5.jpg';
+import tj6 from '../assets/tj6.jpg';
+import tj7 from '../assets/tj7.jpg';
+import tj8 from '../assets/tj8.jpg';
 
 function Detail() {
   const { id } = useParams();
@@ -54,7 +71,40 @@ function Detail() {
         { url: sh24_2_3, note: '超大泡泡玛特'},
         { url: sh24_2_4, note: '小猪和网红合照~'}
       ] 
+    },
+    '24-5-1':{
+      title:'我们的北京之旅',
+      date:'2024-05-01',
+      content:'',
+      imagesWithNote:[
+        {url:bj1,note:''},
+        {url:bj2,note:''},
+        {url:bj3,note:''},
+        {url:bj4,note:''},
+        {url:bj5,note:''},
+        {url:bj6,note:''},
+        {url:bj7,note:''}
+      ]
+    },
+    '24-5-3':{
+      title:'我们到天津啦',
+      date:'2024-05-03',
+      content:'',
+      imagesWithNote:[
+        {url:tj1,note:''},
+        {url:tj2,note:''},
+        {url:tj3,note:''},
+        {url:tj4,note:''},
+        {url:tj5,note:''},
+        {url:tj6,note:''},
+        {url:tj7,note:''},
+        {url:tj8,note:''}
+      ]
     }
+
+
+
+
   };
 
   const item = detailData[id];

@@ -18,8 +18,20 @@ function Timeline() {
     {
       id:'sh24_2',
       date:'2024-2',
-      title:'和朋友们散步',
+      title:'和朋友上海+杭州',
       icon:'🌁'
+    },
+    {
+      id:'24-5-1',
+      date:'2024-5-1',
+      title:'北京',
+      icon:'🦆'
+    },
+    {
+      id:'24-5-3',
+      date:'2024-5-3',
+      title:'天津',
+      icon:'🍔'
     }
 
 
