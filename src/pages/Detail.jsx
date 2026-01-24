@@ -6,13 +6,17 @@ import yyh2 from '../assets/yyh2.jpg';
 import yyh3 from '../assets/yyh3.jpg';
 import yyh4 from '../assets/yyh4.jpg';
 
-import dsn1 from '../assets/dsn1.jpg';
-import dsn2 from '../assets/dsn2.jpg';
-import dsn3 from '../assets/dsn3.jpg';
-import dsn4 from '../assets/dsn4.jpg';
+import disney1 from '../assets/disney1.jpg';
+import disney2 from '../assets/disney2.jpg';
+import disney3 from '../assets/disney3.jpg';
+import disney4 from '../assets/disney4.jpg';
+
+import sh24_2_1 from '../assets/sh24_2_1.jpg';
+import sh24_2_2 from '../assets/sh24_2_2.jpg';
+import sh24_2_3 from '../assets/sh24_2_3.jpg';
+import sh24_2_4 from '../assets/sh24_2_4.jpg';
 
 function Detail() {
-  // useParams 必须在组件函数的最顶部调用
   const { id } = useParams();
 
   const detailData = {
@@ -27,18 +31,38 @@ function Detail() {
         { url: yyh4, note: 'city walk~' }
       ]
     },
-    'dsn': {
+
+    'disney': {
       title: '第一次上海迪士尼',
       date: '2024-01-15',
       content: '我们第一次去迪士尼！',
       imagesWithNote: [
-        { url: dsn1, note: '排队前的超大唐老鸭'},
-        { url: dsn2, note: '尼克狐尼克！'},
-        { url: dsn3, note: '小兔子朱迪！'},
-        { url: dsn4, note: '呜呜呜呜呜大猪猪吃完晚饭困困睡着了~'}
+        { url: disney1, note: '排队前的超大唐老鸭'},
+        { url: disney2, note: '尼克狐尼克！'},
+        { url: disney3, note: '小兔子朱迪！'},
+        { url: disney4, note: '呜呜呜呜呜大猪猪吃完晚饭困困睡着了~'}
+      ] 
+    },
+    
+  'sh24_2': {
+      title: '去了上海之后又去了杭州',
+      date: '2024-02',
+      content: '逛逛逛！',
+      imagesWithNote: [
+        { url: sh24_2_1, note: '给小猪拍了广角大片！'},
+        { url: sh24_2_2, note: '迷雾飘散的上海夜景'},
+        { url: sh24_2_3, note: '超大泡泡玛特'},
+        { url: sh24_2_4, note: '小猪和网红合照~'}
       ] 
     }
+
+
+
+
+
+
   };
+
 
   const item = detailData[id];
 

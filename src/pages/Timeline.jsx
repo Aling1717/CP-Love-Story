@@ -10,11 +10,18 @@ function Timeline() {
       icon: '🏟️' 
     },
     {
-        id:'dsn',
+        id:'disney',
         date:'2024-1-15',
         title:'第一次上海迪士尼',
         icon:'🎡'
     },
+    {
+      id:'sh24_2',
+      date:'2024-2',
+      title:'和朋友们散步',
+      icon:'🌁'
+    }
+
 
   ];
 
